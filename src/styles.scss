@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+$main: #009DDC;
+$success: #659157;
+$error: #924f4f;
+$black: #0E131F;
+$black-2: #2a2c24;
+
+.app-button {
+    height: 35px;
+    border: none;
+    border-radius: 2px;
+    min-width: 40px;
+    background: $error;
+    color: #fff;
+    cursor: pointer;
+
+    &:hover {
+        background: lighten(#a05656, 10%);
+    }
+}
+
