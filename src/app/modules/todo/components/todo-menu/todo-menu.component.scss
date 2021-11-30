@@ -1,0 +1,14 @@
+.todo-menu {
+    display: flex;
+    padding: 15px;
+    border-top: 1px solid #ccc;
+    ul {
+        display: flex;
+        list-style-type: none;
+        margin: 0;
+    }
+
+    li {
+        padding-left: 15px;
+    }
+}

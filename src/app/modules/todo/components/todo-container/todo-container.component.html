@@ -1,0 +1,28 @@
+<div class="todo-container">
+    <h1>Todos</h1>
+    <div class="todo-container__box box">
+        <div class="box__header header">
+            <div class="header__icon">
+                <app-checkbox [(ngModel)]="areAllCompleted" (change)="markAllAsChecked()"></app-checkbox>
+            </div>
+            <div class="header__input">
+                <app-input [(ngModel)]="itemToAdd" (keyup.enter)="addItem()"></app-input>
+            </div>
+        </div>
+        <div class="box__body body">
+            <app-todo-list>
+                <app-todo-item 
+                    *ngFor="let item of todoList | state:filterConfig | order:orderConfig"
+                    [id]="item.id"
+                    [description]="item.description"
+                    [isCompleted]="item.isCompleted"
+                    (stateChanged)="handleItemChanged($event)"
+                    (delete)="handleDeleteItem(item.id)">
+                </app-todo-item>
+            </app-todo-list>
+        </div>
+        <div class="box__footer footer">
+            <app-todo-menu [count]="(todoList | state:filterConfig | order:orderConfig).length" (filter)="handleFilterChanged($event)" (order)="handleOrderChanged($event)"></app-todo-menu>
+        </div>
+    </div>
+</div>

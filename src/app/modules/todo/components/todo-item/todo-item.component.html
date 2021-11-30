@@ -1,0 +1,12 @@
+<div class="todo-item__container" [formGroup]="itemStateForm">
+    <div class="todo-item__check">
+        <input type="checkbox" name="isCompleted" formControlName="isCompleted">
+    </div>
+    <div class="todo-item__label">
+        <app-input formControlName="description">
+        </app-input>
+    </div>
+    <div class="todo-item__actions">
+        <button appButton (click)="deleteItem()">X</button>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+.todo-container {
+    background-color: #f1f1f1;
+
+    &__box {
+        background-color: white;
+        width: 500px;
+        margin: 25px auto;
+        display: block;
+        border: 1px solid #ccc;
+    }
+
+    .box {
+        &__header {
+            display: flex;
+            border-bottom: 1px solid #ccc;
+            padding: 15px;
+    
+            .header {
+                &__icon {
+                    display: flex;
+                    align-self: center;
+                }
+
+                &__input {
+                    padding-left: 15px;
+                    flex-grow: 1;
+                    app-input, input {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        &__body {
+            display: block;
+            padding: 15px;
+        }
+        
+    }
+    
+}

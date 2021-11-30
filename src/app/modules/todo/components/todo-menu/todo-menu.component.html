@@ -1,0 +1,20 @@
+<div class="todo-menu">
+    <div class="todo__items">
+        {{ count }} Items
+    </div>
+    <div class="todo__actions">
+        <ul>
+            <li><b>Filtrar por:</b></li>
+            <li (click)="changeFilter('All')">Todos</li>
+            <li (click)="changeFilter('Active')">Ativos</li>
+            <li (click)="changeFilter('Done')">Completos</li>
+        </ul>
+
+        <ul>
+            <li><b>Ordenação:</b></li>
+            <li (click)="changeOrder('Default')">Default</li>
+            <li (click)="changeOrder('Asc')">Crescente</li>
+            <li (click)="changeOrder('Desc')">Decrescente</li>
+        </ul>
+    </div>
+</div>
