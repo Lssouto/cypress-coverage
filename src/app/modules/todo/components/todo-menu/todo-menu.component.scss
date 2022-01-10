@@ -6,9 +6,16 @@
         display: flex;
         list-style-type: none;
         margin: 0;
-    }
+        width: 100%;
+        justify-content: space-between;
 
-    li {
-        padding-left: 15px;
+        & > li:first-child {
+            cursor: default;
+        }
+
+        & > li {
+            padding: 4px;
+            cursor: pointer;
+        }
     }
 }

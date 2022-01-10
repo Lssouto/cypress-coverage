@@ -1,6 +1,6 @@
 <div class="todo-item__container" [formGroup]="itemStateForm">
     <div class="todo-item__check">
-        <input type="checkbox" name="isCompleted" formControlName="isCompleted">
+        <app-checkbox formControlName="isCompleted"></app-checkbox>
     </div>
     <div class="todo-item__label">
         <app-input formControlName="description">

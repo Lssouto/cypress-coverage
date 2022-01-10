@@ -1,7 +1,7 @@
-import { Component, EventEmitter, Input, OnDestroy, OnInit, Output, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, Input, OnDestroy, OnInit, Output, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { debounceTime, takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-todo-item',
@@ -36,7 +36,7 @@ export class TodoItemComponent implements OnInit, OnDestroy {
   }
 
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
   ) { 
     this._itemStateForm = this.formBuilder.group({
       isCompleted: [false],
@@ -44,15 +44,17 @@ export class TodoItemComponent implements OnInit, OnDestroy {
     });
   }
 
+  private _emitChangedEvent(state: any): void {
+    this.stateChanged.emit({
+      ...state,
+      id: this.id
+    });
+  }
+
   ngOnInit() {
     this._itemStateForm.valueChanges
-      .pipe(takeUntil(this._onDestroy$))
-      .subscribe(state => {
-        this.stateChanged.emit({
-          ...state,
-          id: this.id
-        });
-    })
+      .pipe(debounceTime(500))
+      .subscribe(state => this._emitChangedEvent(state))
   }
 
   ngOnDestroy() {

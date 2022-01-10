@@ -11,10 +11,7 @@ import { ItemEntity } from '../../entity/item.entity';
 })
 export class TodoContainerComponent {
 
-  private _todoList: ItemEntity[] = [
-    new ItemEntity({ description: 'Comprar um monitor' }),
-    new ItemEntity({ description: 'Abrir pote de sorvete' })
-  ];
+  private _todoList: ItemEntity[] = [];
   public get todoList() {
     return this._todoList;
   }
