@@ -1,0 +1,16 @@
+export enum ELEMENTS { 
+    baseInput = '.app-input input',
+    baseButton = '.app-button',
+    baseCheckbox = '.app-checkbox input',
+    menu = '.todo-menu',
+    menuItems = '.todo__items',
+    menuList = '.todo__actions',
+    actionsFilterList = '.actions__filter',
+    actionsOrderlist = '.actions__order',
+    list = 'app-todo-list',
+    listItem = 'app-todo-item',
+    todoItem = '.todo-item__container',
+    todoItemStatus = '.todo-item__check',
+    todoItemLabel = '.todo-item__label',
+    todoItemRemove = '.todo-item__actions',
+}
